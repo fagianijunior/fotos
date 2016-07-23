@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dnm6odvin
+  api_key: '729239443433461'
+  api_secret: IsaWUtAUHLsxUL-jUNjnxS2KkaM
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dnm6odvin
+  api_key: '729239443433461'
+  api_secret: IsaWUtAUHLsxUL-jUNjnxS2KkaM
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dnm6odvin
+  api_key: '729239443433461'
+  api_secret: IsaWUtAUHLsxUL-jUNjnxS2KkaM
+  enhance_image_tag: true
+  static_image_support: false
