@@ -1,9 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Path:</strong>
-  <%= @picture.path %>
+  <%= image_tag(@picture.path, width: 800) %>
 </p>
 
-<%= link_to 'Edit', edit_picture_path(@picture) %> |
-<%= link_to 'Back', pictures_path %>
+<h2>Comentários</h2>
+<% @picture.comments.each do |comment| %>
+  <div class="well">
+    <strong>Nome:</strong>
+    <%= comment.commenter %>
+  <br>
+    <strong>Comentário:</strong>
+    <%= comment.body %>
+  </div>
+<% end %>
+
+<h2>Adicionar comentário:</h2>
+<%= form_for([@picture, @picture.comments.build]) do |f| %>
+  <%= f.label "Nome:" %>
+  <%= f.text_field :commenter %><br><br>
+  <%= f.label "Comentário:" %>
+  <%= f.text_area :body %><br>
+
+  <%= f.submit "Salvar comentário" %>
+<% end %>
+<br><br>
+<!-- %= link_to 'Edit', edit_picture_path(@picture) % | -->
+<%= link_to 'Voltar', pictures_path %>

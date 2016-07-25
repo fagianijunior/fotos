@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :up_votes
-  resources :pictures
   resources :users
+  resources :pictures do
+    resources :comments
+    resources :up_votes
+  end
+
   get 'welcome/index'
 
   root 'welcome#index'
